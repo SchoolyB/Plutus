@@ -1,0 +1,10 @@
+TODO: continue to build up pages
+TODO: build nav menu
+TODO: build user registration on sign up page
+TODO: build api of user data
+TODO: connect python server to Mongo
+TODO: hand draw wire frames
+TODO: add figma design to docs folder
+TODO: update README.md
+TODO: deploy front end to netlify
+TODO: deploy backend to render
