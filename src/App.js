@@ -1,9 +1,26 @@
-import React, {useState,useEffect} from 'react' 
+import Header from "./components/header"
+import Home from "./components/index"
+import Signup from "./components/Signup"
+import Login from "./components/Login"
+import Transactions from "./components/Transactions"
+import Footer from "./components/Footer"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import "./components/styles.css"
+
 
 function App() {
   return (
-    <div>App</div>
-  )
+    <Router>
+      <Header/>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Signup" element={<Signup />} />
+        <Route path="/Transactions" element={<Transactions />} />
+      </Routes>
+      <Footer/>
+    </Router>
+  );
 }
 
 export default App
