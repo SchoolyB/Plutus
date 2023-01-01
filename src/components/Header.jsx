@@ -1,5 +1,5 @@
 import React from 'react'
-import mainLogo from  "../assets/images/logos/png/logo-black.png"
+import mainLogo from  "../assets/images/logos/logo-no-background.png"
 export default function header() {
   return (
     <div>

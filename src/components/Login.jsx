@@ -1,11 +1,27 @@
 import { Formik } from "formik";
-import * as EmailValidator from "email-validator";
 import * as Yup from "yup"
+import logo from "../assets/images/logos/logo-black-removebg-preview.png"
 
 
 
 const Login = () => (
-<Formik
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "center"
+  }}>
+  <div id="loginContainer"
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        backgroundColor: "white",
+        borderRadius: "50px",
+        marginTop: "15em",
+        display: "flex",
+        height: "30em",
+        width: "50%"
+      }}>
+      <Formik
   initialValues={{ email: "", password: "" }} //lets us know that initial values of the fields should always be blank
   onSubmit={(values, { setSubmitting }) => { // onsubmit callback that takes two params. values:whatever the user enters and an object 
     setTimeout(() => {
@@ -74,9 +90,10 @@ const Login = () => (
         </form>
       );
     }}
-  </Formik>
+    </Formik>
+    </div>
 
-
+</div>
 );
 
 

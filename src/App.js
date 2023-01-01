@@ -1,8 +1,10 @@
-import Header from "./components/header"
+import Header from "./components/Header"
 import Home from "./components/index"
 import Signup from "./components/Signup"
 import Login from "./components/Login"
 import Transactions from "./components/Transactions"
+import Contact from "./components/Contact"
+import About from "./components/About"
 import Footer from "./components/Footer"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import "./components/styles.css"
@@ -13,10 +15,12 @@ function App() {
     <Router>
       <Header/>
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route path="*" element={<Home />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Signup" element={<Signup />} />
         <Route path="/Transactions" element={<Transactions />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/About" element={<About />} />
       </Routes>
       <Footer/>
     </Router>
