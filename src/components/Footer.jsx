@@ -11,7 +11,7 @@ export default function Footer() {
     <div>
       <footer>
         <div id='footerElementsContainer'>
-         <div id='footerTextContainer'>
+         {/* <div id='footerTextContainer'>
           <ul id="footerText">
               <li>
               Plutus Banking Union
@@ -21,7 +21,7 @@ export default function Footer() {
               </li>
           </ul>
         </div>
-          
+           */}
           <div id="footerLogosContainer">
             
           </div>
@@ -29,10 +29,10 @@ export default function Footer() {
         <div id='footerLinksContainer'>
           <ul>
             <li >
-              <a href="Contact" className='footerLinks'>Contact</a>
+              <a href="/Contact" className='footerLinks'>Contact</a>
             </li>
             <li>
-              <a href="About" className='footerLinks'>About</a>
+              <a href="/About" className='footerLinks'>About</a>
             </li>
             <li>
               <a href="https://github.com/SchoolyB" className='footerLinks' >GitHub</a>

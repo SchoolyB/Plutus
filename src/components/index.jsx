@@ -4,10 +4,9 @@ export default function Home() {
   return (
     <div id="homeBackground">
       
-      <div id='loginSignup'>
-        <button class='homeBtn'>Login <a href ="/login"></a> </button>
-        <button class='homeBtn'>SignUp<a href ="/signup"></a> </button>
-      <h1>THIS IS A TEST</h1>
+      <div id='loginSignupContainer'>
+        <button class='homeBtn'><a href ="/login">Login</a> </button>
+        <button class='homeBtn'><a href ="/signup">SignUp</a> </button>
       </div>
     
     </div>

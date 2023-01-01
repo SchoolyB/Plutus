@@ -1,4 +1,4 @@
-, body, #root{
+html, body, #root{
   height: 100%;
   
 }
@@ -93,7 +93,7 @@ footer{
   height: 4em;
   width: 100%;
   margin: auto;
-  position: absolute; top: 55em;
+  position: absolute; top: 50em;
   justify-content: center;
   justify-content: flex-end;
 }
@@ -102,13 +102,19 @@ ul{
   list-style: none;
   
 }
-#footerTextContainer{
+/* #footerTextContainer{
 background-color: blue;
 position: relative; right: 50em;
 text-align: center;
 
-}
+} */
 
 .footerLinks{
-  color: greenyellow;
+  color: white;
+text-decoration: none;
+}
+
+#footerLinksContainer{
+position: relative; top: 3em;
+position: relative; right: 2em;
 }
