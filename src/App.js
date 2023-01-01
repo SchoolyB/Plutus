@@ -1,4 +1,4 @@
-import Header from "./components/header"
+import Header from "./components/Header"
 import Home from "./components/index"
 import Signup from "./components/Signup"
 import Login from "./components/Login"
@@ -13,7 +13,7 @@ function App() {
     <Router>
       <Header/>
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route path="*" element={<Home />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Signup" element={<Signup />} />
         <Route path="/Transactions" element={<Transactions />} />

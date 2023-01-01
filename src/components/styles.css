@@ -1,5 +1,22 @@
+, body, #root{
+  height: 100%;
+  
+}
+
+
+#root{
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+overflow-x: hidden;
+
+}
+
 body {
-  background-image: url("../assets/images/backgrounds/parthenon.jpg");
+  background-image: url("../assets/images/backgrounds/highResRuin.jpeg");
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size:cover ;
   color: white;
   padding:0;
   margin:0;
@@ -9,11 +26,9 @@ header{
 }
 
 #headerLogo{
-height: 20em
+height: 5em
 }
 
-#homeBackground{
-}
 
 .App {
   font-family: sans-serif;
@@ -74,7 +89,26 @@ button:hover {
 
 footer{
   display:flex;
-  justify-content:center;
-  background-color: gray;
+  background-color: transparent;
+  height: 4em;
+  width: 100%;
+  margin: auto;
+  position: absolute; top: 55em;
+  justify-content: center;
+  justify-content: flex-end;
+}
 
+ul{
+  list-style: none;
+  
+}
+#footerTextContainer{
+background-color: blue;
+position: relative; right: 50em;
+text-align: center;
+
+}
+
+.footerLinks{
+  color: greenyellow;
 }
