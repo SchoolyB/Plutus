@@ -1,7 +1,6 @@
 import { Formik } from "formik";
 import * as Yup from "yup"
 import logo from "../assets/images/logos/png/logo-no-background.png"
-import React, {useState} from "react"
 
 
 const Login = () => (
@@ -93,7 +92,11 @@ const Login = () => (
   <div className="input-feedback">{errors.password}</div>
 )}
           <button type="Submit" disabled={isSubmitting} >Login</button>
-          <a href="/Signup">Not A Member? Sign Up</a>
+          <p style={{
+            color: "red"
+          }}>Not a member? 
+          <a href="/Signup">Sign Up</a>
+          </p>
         </form>
       );
     }}
