@@ -1,5 +1,7 @@
 import React from 'react'
+import axios from "axios"
 import logo from "../assets/images/logos/png/logo-no-background.png"
+import { response } from 'express'
 
 
 
@@ -31,32 +33,28 @@ export default function Signup() {
               color: "red"
             }}>Enter an email
             </label>
-          <input placeholder='please enter your email'></input>
+          <input id="initialEmail" placeholder='please enter your email'></input>
             <label htmlFor="confirmEmail" style={{
               color: "red"
             }}>Confirm Email
             </label>
-            <input placeholder='please confirm your email'></input>
+            <input id="confirmEmail" placeholder='please confirm your email'></input>
               
             <label htmlFor="email" style={{
               color: "red"
             }}>Enter a password
             </label>
-          <input placeholder='please enter a password'></input>
+          <input  id="initialPassword" placeholder='please enter a password'></input>
             <label htmlFor="confirmEmail" style={{
               color: "red"
             }}>Confirm password
             </label>
-            <input placeholder='please confirm your password'></input>
+            <input  id="confirmPassword" placeholder='please confirm your password'></input>
             <button type='submit'>Submit</button>
             <p style={{
             color: "red"
-          }}>Already a memeber? <a href="login">Login</a></p>
+          }}>Already a member? <a href="login">Login</a></p>
           </form>
-
-
-
-
 
         </div>
       </div>

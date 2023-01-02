@@ -2,7 +2,7 @@ import Header from "./components/Header"
 import Home from "./components/index"
 import Signup from "./components/Signup"
 import Login from "./components/Login"
-import Transactions from "./components/Transactions"
+import Account from "./components/Account"
 import Contact from "./components/Contact"
 import About from "./components/About"
 import Footer from "./components/Footer"
@@ -18,7 +18,7 @@ function App() {
         <Route path="*" element={<Home />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Signup" element={<Signup />} />
-        <Route path="/Transactions" element={<Transactions />} />
+        <Route path="/Account" element={<Account />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/About" element={<About />} />
       </Routes>
