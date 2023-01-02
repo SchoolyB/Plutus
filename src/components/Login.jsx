@@ -1,27 +1,33 @@
 import { Formik } from "formik";
 import * as Yup from "yup"
-import logo from "../assets/images/logos/logo-black-removebg-preview.png"
-
+import logo from "../assets/images/logos/png/logo-no-background.png"
 
 
 const Login = () => (
+  // this div is the overall container
+  <div style={{
+    display: "flex",
+    justifyContent: "center"
+  }}>
   <div
     style={{
       display: "flex",
-      justifyContent: "center"
-  }}>
-  <div id="loginContainer"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        backgroundColor: "white",
-        borderRadius: "50px",
-        marginTop: "15em",
-        display: "flex",
-        height: "30em",
-        width: "50%"
-      }}>
-      <Formik
+      justifyContent: "center",
+      backgroundColor: "white",
+      height: "28em",
+      marginTop: "10em",
+      borderRadius: "50px",
+      width: "50%"      
+      }}> 
+      
+
+  <div>
+      <img src={logo} style={{
+        height: "10em",
+        marginTop: "2em",
+        filter: "brightness(0%)"
+          }}></img>
+      <Formik 
   initialValues={{ email: "", password: "" }} //lets us know that initial values of the fields should always be blank
   onSubmit={(values, { setSubmitting }) => { // onsubmit callback that takes two params. values:whatever the user enters and an object 
     setTimeout(() => {
@@ -86,14 +92,20 @@ const Login = () => (
   <div className="input-feedback">{errors.password}</div>
 )}
           <button type="Submit" disabled={isSubmitting} >Login</button>
-          <a href="/Signup">Not A Member? Sign Up</a>
+          <p style={{
+            color: "red"
+          }}>Not a member? 
+          <a href="/Signup">Sign Up</a>
+          </p>
         </form>
       );
     }}
     </Formik>
-    </div>
+      </div>
+  
 
-</div>
+    </div>
+    </div>
 );
 
 
