@@ -1,8 +1,4 @@
 import React from 'react';
-import contact from "./"; 
-import about from "./"; 
-import github from "./"; 
-
 
 
 export default function Footer() {
