@@ -1,8 +1,18 @@
 import React from 'react'
-import axios from "axios"
 import logo from "../assets/images/logos/png/logo-no-background.png"
-import { response } from 'express'
+// import {createClient} from "@supabase/supabase-js"
 
+// require("dotenv").config()
+
+// const supabaseUrl = "https://qjewggjldzecwlimkaro.supabase.co";
+// const supabasekey = process.evv.SUPA_BASE;
+// const supabase = createClient(supabaseUrl, supabasekey);
+
+
+// let { data, error } = await supabase.auth.signUp({
+//   email: 'someone@email.com',
+//   password: '1234'
+// })
 
 
 export default function Signup() {
