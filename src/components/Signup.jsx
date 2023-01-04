@@ -1,7 +1,6 @@
 import React from 'react'
-import axios from "axios"
 import logo from "../assets/images/logos/png/logo-no-background.png"
-import { response } from 'express'
+
 
 
 
