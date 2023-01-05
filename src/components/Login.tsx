@@ -21,7 +21,7 @@ const Login = () => {
   }
 
   return (
-    // this div is the overall container
+    //this div is the overall container
     <div
       style={{
         display: "flex",
@@ -39,7 +39,7 @@ const Login = () => {
           width: "50%",
         }}
       >
-        <div>
+        <div id="loginLogoPage">
           <img
             src={logo}
             style={{
