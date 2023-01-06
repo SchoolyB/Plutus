@@ -5,8 +5,8 @@ export default function Home() {
     <div id="homeBackground">
       
       <div id='loginSignupContainer'>
-        <button class='homeBtn'><a href ="/login">Login</a> </button>
-        <button class='homeBtn'><a href ="/signup">SignUp</a> </button>
+        <button className='homeBtn'><a href ="/login">Login</a> </button>
+        <button className='homeBtn'><a href ="/signup">SignUp</a> </button>
       </div>
     
     </div>
