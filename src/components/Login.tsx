@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useState } from "react";
+import React from "react";
 import logo from "../assets/images/logos/png/logo-no-background.png";
 
 const Login = () => {
   const [email, setEmail] = useState(""); //set email is a function
   const [password, setPassword] = useState(""); //setPassword is a function
 
-  async function handleSubmit(event) {
+  async function handleSubmit(event:React.FormEvent) {
     event.preventDefault();
     try {
       const res = await axios.post("http://localhost:4040/login", {
@@ -40,7 +41,7 @@ const Login = () => {
         }}
       >
         <div id="loginLogoPage">
-          <img
+          <img alt="Plutus Logo"
             src={logo}
             style={{
               height: "10em",

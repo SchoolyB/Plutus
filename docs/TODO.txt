@@ -8,6 +8,7 @@ TODO: build api of user data
 TODO: connect python server to Mongo
 TODO: hand draw wire frames
 TODO: need to add feature on signup page that requires entered password and email to match confirmation password and email
+TODO: add password and email requirements on from end so user can see them
 TODO: every user would have their own instance of a  transactions page LOL i didnt think of that
 TODO: deploy front end to netlify
 TODO: deploy backend to render
