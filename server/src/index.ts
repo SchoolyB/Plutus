@@ -21,7 +21,7 @@ async function start() {
 
   app.use(express.json());
 
-  //used for membership date DO NOT REMOVE
+  //used for cookkie DO NOT REMOVE
   const oneDay = 1000 * 60 * 60 * 24; //creating 24 hours in milliseconds
   app.use(
     session({
@@ -43,16 +43,20 @@ async function start() {
       where: { email },
       select: { email: true, password: true },
     });
-    const errorMessage = {
+
+    const loginError = {
+      //creating an error object that has a message a a boolean of "ok"
       message: "invalid username or password",
       ok: false,
     };
     if (!user) {
-      return res.status(401).send(errorMessage);
+      //if not a user in the database return the loginError object that contains a message and a boolean
+      return res.status(401).send(loginError);
     }
-    const valid = await compare(password, user.password!);
+    const valid = await compare(password, user.password!); //creating a variable called valid. valid uses the compare() function built in bcrypt. cwe pass in password and user.password to compare the two parmas
     if (!valid) {
-      return res.status(401).send(errorMessage);
+      // if the password entered is not a valid match to the password  stored in the DB return the loginError object that contains a message and a boolean
+      return res.status(401).send(loginError);
     }
     const fullUser = await User.findOneByOrFail({ email });
     req.session.user = fullUser;
@@ -72,47 +76,52 @@ async function start() {
     } = req.body;
 
     // VALIDATION
-    //these regex determines what characters and format can be used for an email
+    //these regex determines what characters and format can be used for an email or password
     const emailRegex =
       /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
     const passwordRegex =
       /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/gm;
+    const invalidEmailError = next(new Error("Invalid email"));
+    const passwordNotProvided = next(new Error("Password not provided"));
+    const emailsDontMatch = next(new Error("Emails do not match"));
+    const passwordsDontMatch = next(new Error("Passwords do not match"));
+    const failedToRegister = next(new Error("Failed to sign up user"));
 
     if (!emailRegex.test(initialEmail)) {
       //if the email doesnt match the email regex then return error
-      return next(new Error("Invalid email"));
+      return invalidEmailError;
     }
     if (!passwordRegex.test(initialPassword)) {
-      return next(new Error("Password not provided"));
+      //if the password doesnt match the email regex then return error
+      return passwordNotProvided;
     }
 
     // CONFIRMATION
     if (initialEmail !== confirmationEmail) {
-      return next(new Error("Emails do not match"));
+      return emailsDontMatch;
     }
-
     if (initialPassword !== confirmationPassword) {
-      return next(new Error("Passwords do not match"));
+      return passwordsDontMatch;
     }
 
     const user = new User();
     user.firstName = firstName;
     user.lastName = lastName;
     user.email = initialEmail;
-    user.password = await hash(initialPassword, 10);
+    user.password = await hash(initialPassword, 10); //bcrypt hashes users password
 
     try {
       await User.save(user); //can do user.save() and not pass in the user object. either or works
     } catch (error) {
       console.error(error);
-      return next(new Error("Failed to sign up user"));
+      return failedToRegister;
     }
     delete user.password; //deletes the password property from the user object before its sent to the browser
     res.send(user);
   });
 
   app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
+    console.log(`Server listening on port ${port}`);
   });
 }
 
