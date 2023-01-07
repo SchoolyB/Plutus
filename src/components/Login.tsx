@@ -6,20 +6,27 @@ import logo from "../assets/images/logos/png/logo-no-background.png";
 const Login = () => {
   const [email, setEmail] = useState(""); //set email is a function
   const [password, setPassword] = useState(""); //setPassword is a function
-
+  const [error, setError] = useState("");
+  
   async function handleSubmit(event:React.FormEvent) {
     event.preventDefault();
     try {
       const res = await axios.post("http://localhost:4040/login", {
         password,
         email,
+      }).catch(err => { 
+        setError(err.response.data.message)
+        console.log(err.response)
       });
-      console.log(res.data);
+      if (res) {
+        console.log(res.data)
+      }
     } catch (error) {
       console.error(error);
     }
     console.log(password, email);
   }
+
 
   return (
     //this div is the overall container
@@ -29,6 +36,7 @@ const Login = () => {
         justifyContent: "center",
       }}
     >
+      
       <div
         style={{
           display: "flex",
@@ -41,6 +49,7 @@ const Login = () => {
         }}
       >
         <div id="loginLogoPage">
+          {error}
           <img alt="Plutus Logo"
             src={logo}
             style={{

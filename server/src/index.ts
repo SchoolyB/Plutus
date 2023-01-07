@@ -3,7 +3,13 @@ import { AppDataSource } from "./data-source";
 import { User } from "./entity/User";
 import session from "express-session";
 import cors from "cors";
-import { hashSync } from "bcrypt";
+import { compare, hash } from "bcrypt";
+
+declare module "express-session" {
+  interface SessionData {
+    user: User;
+  }
+}
 
 const app = express();
 const port = 4040;
@@ -33,8 +39,25 @@ async function start() {
 
   app.post("/login", async (req, res) => {
     const { email, password } = req.body;
-    const user = await User.findOneBy({ email });
-    res.send(user?.firstName);
+    const user = await User.findOne({
+      where: { email },
+      select: { email: true, password: true },
+    });
+    const errorMessage = {
+      message: "invalid username or password",
+      ok: false,
+    };
+    if (!user) {
+      return res.status(401).send(errorMessage);
+    }
+    const valid = await compare(password, user.password!);
+    if (!valid) {
+      return res.status(401).send(errorMessage);
+    }
+    const fullUser = await User.findOneByOrFail({ email });
+    req.session.user = fullUser;
+    req.session.save();
+    res.send(fullUser);
   });
 
   // next comes from express when used allows the program to run whatever is next when called
@@ -76,7 +99,7 @@ async function start() {
     user.firstName = firstName;
     user.lastName = lastName;
     user.email = initialEmail;
-    user.password = hashSync(initialPassword, 10);
+    user.password = await hash(initialPassword, 10);
 
     try {
       await User.save(user); //can do user.save() and not pass in the user object. either or works
