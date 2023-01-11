@@ -4,6 +4,8 @@ import {
   Column,
   CreateDateColumn,
   BaseEntity,
+  Generated,
+  PrimaryColumn,
 } from "typeorm";
 
 @Entity()
@@ -11,6 +13,9 @@ export class User extends BaseEntity {
   // MUST HAVE DECLARE KEYWORD IF I USE THE DECLARE WORD I CANT ASSIGN A VALUE
   @PrimaryGeneratedColumn()
   declare id: number;
+
+  @PrimaryColumn()
+  declare accountNumber: number;
 
   @Column()
   declare firstName: string;

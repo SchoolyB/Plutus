@@ -1,4 +1,7 @@
 import React from 'react'
+import { Chart } from "../components/Chart"
+
+
 
 export default function Account() {
   return (
@@ -10,14 +13,11 @@ export default function Account() {
       justifyContent: "center",
       padding:"1rem",
       marginTop: "10em",
-
     }}>
-{/* 
-      <div id="logoutContainer"
-      style={}>
-        <button>LOGOUT</button>
-        </div> */}
 
+      <div id='balanceChart' style={{width:"50%"}}>
+      <Chart />      
+    </div>
       <div id='leftSide' style={{display:"flex",flexDirection:"column", width:"50%"}}>
       <div id='userInfoContainer'>
           <h4>Hello: Test User </h4>
