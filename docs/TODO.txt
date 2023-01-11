@@ -2,14 +2,12 @@
 TODO: find a font
 TODO: continue to build up pages
 TODO: build nav menu
-TODO: build user registration on sign up page
-TODO: find a way to hide header and footer when on certain componenets/pages 
+TODO: find a way to hide header and footer when on certain components/pages 
 TODO: build api of user data
-TODO: connect python server to Mongo
 TODO: hand draw wire frames
-TODO: need to add feature on signup page that requires entered password and email to match confirmation password and email
 TODO: add password and email requirements on from end so user can see them
-TODO: every user would have their own instance of a  transactions page LOL i didnt think of that
+TODO: every user would have their own instance of an account page
+TODO: possibly use D3 library to build pie charts that show user accounts balances 
 TODO: deploy front end to netlify
 TODO: deploy backend to render
 TODO: update README.md
@@ -17,3 +15,5 @@ TODO: update README.md
 
 ***Completed***
 TODO: add figma design to docs folder (completed 1/1/23)
+TODO: need to add feature on signup page that requires entered password and email to match confirmation password and email (completed 1/23)
+TODO: build user registration (completed 1/23) on sign up page
