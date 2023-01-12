@@ -1,7 +1,8 @@
-import axios from "axios";
+
 import React from "react";
 import { useState } from "react";
 import logo from "../assets/images/logos/png/logo-no-background.png";
+import { api } from "../includes/api";
 
 
 const Signup = () => {
@@ -15,7 +16,7 @@ const Signup = () => {
   async function handleSubmit(event:React.FormEvent) { //event:any would work as well with "any" being the type
     event.preventDefault();
     try {
-      const res = await axios.post("http://localhost:4040/signup", {
+      const res = await api.post("signup", {
         firstName,
         lastName,
         initialEmail,

@@ -6,6 +6,7 @@ TODO: find a way to hide header and footer when on certain components/pages
 TODO: build api of user data
 TODO: hand draw wire frames
 TODO: add password and email requirements on from end so user can see them
+TODO: build transactions entity and implement
 TODO: every user would have their own instance of an account page
 TODO: possibly use D3 library to build pie charts that show user accounts balances 
 TODO: deploy front end to netlify
