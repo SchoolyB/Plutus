@@ -1,10 +1,23 @@
 import React from 'react'
+import axios from "axios";
 import { Chart } from "../components/Chart"
 
 
+// export function checkingBalance() {
+//   const usersCheckingBalance = ``
+// }
+
+// export function savingsBalance(){
+
+// }
+axios.get("http://localhost:4040").then(response => {
+  console.log(response.data)
+})
 
 export default function Account() {
-  return (
+  return ( 
+    
+    
     <div id="accountPageContainer" style={{
       color: "black",
       backgroundColor: "white",
@@ -14,7 +27,7 @@ export default function Account() {
       padding:"1rem",
       marginTop: "10em",
     }}>
-
+      
       <div id='balanceChart' style={{width:"50%"}}>
       <Chart />      
     </div>
@@ -122,11 +135,3 @@ export default function Account() {
     </div>
   )
 }
-// export function savingsBalance() { 
-//   return (
- 
-    
-
-// )
-
-// };

@@ -5,10 +5,11 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 3000,
+    port: 3000, //setting port we want to run the front end on
     proxy: {
       "/api": {
-        target: "HTTP://localhost:4040",
+        //telling frontendthat the rout "/api" is our proxy route
+        target: "HTTP://localhost:4040", //telling our front end to use the "api" proxy route to serve up on local host:4040
       },
     },
   },
