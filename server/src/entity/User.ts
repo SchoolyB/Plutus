@@ -11,11 +11,8 @@ import {
 @Entity()
 export class User extends BaseEntity {
   // MUST HAVE DECLARE KEYWORD IF I USE THE DECLARE WORD I CANT ASSIGN A VALUE
-  @PrimaryGeneratedColumn()
-  declare id: number;
-
-  @PrimaryColumn()
-  declare accountNumber: number;
+  @PrimaryGeneratedColumn("uuid")
+  declare id: string;
 
   @Column()
   declare firstName: string;

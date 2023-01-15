@@ -1,7 +1,7 @@
-import axios from "axios";
 import { useState } from "react";
 import React from "react";
 import logo from "../assets/images/logos/png/logo-no-background.png";
+import { api } from "../includes/api";
 
 const Login = () => {
   const [email, setEmail] = useState(""); //set email is a function
@@ -11,10 +11,10 @@ const Login = () => {
   async function handleSubmit(event:React.FormEvent) {
     event.preventDefault();
     try {
-      const res = await axios.post("http://localhost:4040/login", {
+      const res = await api.post("login", {
         password,
         email,
-      }).catch(err => { 
+      }, {withCredentials: true}).catch(err => { 
         setError(err.response.data.message)
         console.log(err.response)
       });
