@@ -76,7 +76,7 @@ const Signup = () => {
               required
               onChange={(event) => setFirstName(event.target.value)}
               id="name"
-              placeholder="please enter your first name"
+              placeholder="Please enter your first name"
             ></input>
 
             <label htmlFor="last name">Enter your last name</label>
@@ -84,7 +84,7 @@ const Signup = () => {
               required
               onChange={(event) => setLastName(event.target.value)}
               id="name"
-              placeholder="please enter your first name"
+              placeholder="Please enter your last name"
             ></input>
 
             <label
@@ -131,7 +131,7 @@ const Signup = () => {
               pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$"
               onChange={(event) => setPassword(event.target.value)}
               id="initialPassword"
-              placeholder="please enter a password"
+              placeholder="Please enter a password"
             ></input>
             <label
               htmlFor="confirmEmail"
@@ -146,7 +146,7 @@ const Signup = () => {
               pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$"
               onChange={(event) => setConfirmPassword(event.target.value)}
               id="confirmPassword"
-              placeholder="please confirm your password"
+              placeholder="Please confirm your password"
             ></input>
             <button type="submit">Submit</button>
             <p
