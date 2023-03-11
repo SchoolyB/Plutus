@@ -1,6 +1,6 @@
 import { useState } from "react";
 import React from "react";
-import logo from "../assets/images/logos/png/logo-no-background.png";
+import logo from "../assets/images/logos/plutus/png/plutus_image_text_logo.png";
 import { api } from "../includes/api";
 
 const Login = () => {
