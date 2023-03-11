@@ -4,7 +4,7 @@ import { Chart } from "../components/Chart"
 
 
 // export function checkingBalance() {
-//   const usersCheckingBalance = ``
+//   const usersCheingBalance = ``
 // }
 
 // export function savingsBalance(){
